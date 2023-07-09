@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\President;
 use Illuminate\Database\Seeder;
+use OpenAI\Laravel\Facades\OpenAI;
+use Illuminate\Support\Facades\Log;
+
+
 
 class PresidentSeeder extends Seeder
 {
@@ -30,9 +34,39 @@ class PresidentSeeder extends Seeder
           ];
     foreach ($presidents as $president) {
         $p = President::factory()->create($president);
-        // TODO: set real abstract $p->setTranslation('abstract','it','ABSTRACT_IT');
-        // TODO: set real abstract $p->setTranslation('abstract','en','ABSTRACT_EN');
+        $name = $president['name'];
+        Log::info("Query OpenAI API to retrieve info abut $name");
+
+        $msg = "Write a json with the info of $name with the following fields: first_name, last_name,  start_year (year when he starts to be president),  end_year (year when he finished to be president), date_of_birth (YYYY-MM-DD format), date_of_death, (YYYY-MM-DD format), abstract (50 word), wikipedia_url. Following fields must be in different languages: abstract, wikipedia_url. Different languages means that the field must be translated into different languages (English, Italian, French, German, Spanish, Portuguese). Fields first_name and last_name must not be translated.";
+        $result = OpenAI::chat()->create([
+            'model' => 'gpt-3.5-turbo',
+            'messages' => [
+                ['role' => 'user', 'content' => $msg],
+            ],
+        ]);
+        $ja = json_decode($result->choices[0]->message->content,TRUE);
+        $fields = [
+            'first_name',
+            'last_name',
+            'start_year',
+            'end_year',
+            'date_of_birth',
+            'date_of_death',
+        ];
+        foreach($fields as $field) {
+            $p->$field=$ja[$field];
+        }
+        // Abstract
+        foreach(array_keys($ja['abstract']) as $lang) {
+            $p->setTranslation('abstract',$lang,$ja['abstract'][$lang]);
+        }
+        // Wikipedia
+        foreach(array_keys($ja['wikipedia_url']) as $lang) {
+            $p->setTranslation('wikipedia_url',$lang,$ja['wikipedia_url'][$lang]);
+        }    
         $p->save();
+        Log::info("$name.... DONE! Data saved to DB");
+
     }          
     }
 }
