@@ -103,3 +103,77 @@ Utilizing SQLite as the database engine for this Laravel project offers several 
 - **Flexibility**: SQLite provides support for most of the commonly used SQL features, allowing for a wide range of database operations and queries.
 
 Overall, the use of the SQLite database enhances the Italian Presidents Webpage's performance, portability, and ease of use. It enables seamless data storage and retrieval operations, making it an ideal choice for this Laravel project.
+
+## Local Development Setup
+
+To develop and fork the Italian Presidents Webpage project locally, follow these steps:
+
+1. **Clone the Repository**: Start by cloning the project repository from the version control system (e.g., Git). Use the following command in your terminal or Git client:
+   
+   ```
+   git clone [repository-url]
+   ```
+
+2. **Install Dependencies**: Navigate to the project directory and install the required dependencies using Composer. Run the following command:
+   
+   ```
+   composer install
+   ```
+
+3. **Environment Configuration**: Create a copy of the `.env.example` file and rename it as `.env`. Modify the configuration parameters in the `.env` file according to your local environment, including the database settings (e.g., SQLite file path).
+
+4. **Database Setup**: The project uses the data/database.sqlite file that comes with the project. If you want to use the data already created skip step 6.
+
+5. **Generate Application Key**: Run the following command to generate a unique application key:
+   
+   ```
+   php artisan key:generate
+   ```
+
+6. **Run Migrations (and seeders)**: Run this only if you want to regenrate data. Execute the database migrations to create the necessary tables in the database and add data (OpenAI based) with the seeder:
+   
+   ```
+   php artisan migrate:fresh --seed
+   ```
+
+IMPORTANT NOTE: the seeders use OpenAI API to add data, in this case you must add a valid API KEY in the .env file.
+
+7. **Start the Development Server**: Launch the Laravel development server using the following command:
+   
+   ```
+   php artisan serve
+   ```
+
+8. **Access the Webpage**: Open your web browser and visit `http://localhost:8000` (or the specified address shown in the terminal). You should now see the Italian Presidents Webpage.
+
+## Production Deployment
+
+To publish the Italian Presidents Webpage on the web, follow these steps:
+
+1. **Choose a Hosting Provider**: Select a hosting provider that supports Laravel applications. Ensure that the chosen provider meets the server requirements for Laravel, including PHP and database support.
+
+2. **Configure the Server**: Set up the server environment and configure the necessary services like PHP, web server (e.g., Apache or Nginx), and database (e.g., SQLite, MySQL, or PostgreSQL).
+
+3. **Clone the Repository**: Clone the project repository onto your server or upload the project files to the server using FTP or a similar method.
+
+4. **Environment Configuration**: Create a `.env` file on the server and modify the configuration parameters to match your production environment. Update the database settings and any other relevant configuration options.
+
+5. **Install Dependencies**: In the project directory on the server, run the following command to install the project dependencies using Composer:
+   
+   ```
+   composer install --optimize-autoloader --no-dev
+   ```
+
+6. **Generate Application Key**: Generate a new application key for the production environment:
+   
+   ```
+   php artisan key:generate --force
+   ```
+
+7. **Set Permissions**: Ensure that the appropriate permissions are set for files and directories, allowing the web server to read and write as needed.
+
+8. **Configure Web Server**: Set up the web server to point to the `public` directory within the project. Configure any required rewrite rules or virtual hosts to ensure proper routing.
+
+9. **Serve the Application**: Restart the web server or PHP service to serve the application. The Italian Presidents Webpage should now be accessible using the domain or IP address associated with your hosting environment.
+
+By following these steps, you can easily set up a local development environment to work on and fork the Italian Presidents Webpage project. Additionally, the provided instructions for production deployment will guide you in publishing the project on the web for public access.
