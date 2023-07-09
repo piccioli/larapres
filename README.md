@@ -1,64 +1,24 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# LARAPRES project
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Title: Italian Presidents Webpage using Laravel
 
-## About Laravel
+## Abstract:
+The Italian Presidents Webpage is a single-page project developed using the Laravel framework. This project aims to provide a user-friendly interface that displays a comprehensive list of the Italian Presidents along with their brief information, images, and links to their respective Wikipedia pages. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The webpage is designed to offer a visually appealing and intuitive experience, enabling users to easily navigate through the list of Italian Presidents and access detailed information about each individual. The project leverages Laravel's robust routing system and database integration to fetch and present the data in a structured manner.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Key Features:
+1. List of Italian Presidents: The webpage presents a well-organized list of Italian Presidents, showcasing their names and key details.
+2. Brief Information: Each President entry includes a concise summary highlighting their significant achievements or notable contributions.
+3. President Images: The webpage displays visually engaging images of the Presidents, offering a glimpse into their tenure.
+4. Wikipedia Links: To facilitate further exploration, the webpage provides direct links to the Wikipedia pages of each President for in-depth information.
+5. Webpage is translated in 6 different languages (English, Italian, French, German, Spanish, Portuguese).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Technical Implementation:
+The Laravel framework serves as the backbone of this project, enabling efficient backend operations and seamless front-end rendering. The project utilizes Laravel's routing system to define routes for different webpages and endpoints, ensuring smooth navigation. The backend logic retrieves data from a database, processes it, and provides the necessary information to the frontend views.
 
-## Learning Laravel
+For data storage and retrieval, the project employs a relational database management system supported by Laravel's ORM (Object-Relational Mapping) capabilities. This approach allows for efficient querying, sorting, and filtering of President data.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+On the front-end, the project utilizes Laravel's Blade templating engine to generate dynamic HTML views. These views are styled using CSS to ensure an aesthetically pleasing and user-friendly presentation. The webpage employs responsive design principles to ensure compatibility across various devices and screen sizes.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Overall, the Italian Presidents Webpage built with Laravel offers an engaging and informative experience, showcasing the list of Italian Presidents with brief information, images, and convenient links to their respective Wikipedia pages. This project leverages the robust features of Laravel to create a seamless user interface and efficient data management, making it a valuable resource for anyone interested in learning about the Italian Presidents.
