@@ -1,5 +1,22 @@
 # LARAPRES project: Italian Presidents Webpage using Laravel
 
+# Index
+
+- [LARAPRES project: Italian Presidents Webpage using Laravel](#larapres-project-italian-presidents-webpage-using-laravel)
+- [Index](#index)
+  - [Abstract:](#abstract)
+  - [Technical Implementation:](#technical-implementation)
+  - [Localization and Translations](#localization-and-translations)
+    - [Introduction](#introduction)
+    - [Implementation](#implementation)
+    - [Benefits](#benefits)
+  - [Database: SQLite](#database-sqlite)
+    - [Advantages of SQLite](#advantages-of-sqlite)
+    - [Configuration and Usage](#configuration-and-usage)
+    - [Benefits of SQLite for this Project](#benefits-of-sqlite-for-this-project)
+  - [Local Development Setup](#local-development-setup)
+  - [Production Deployment](#production-deployment)
+
 
 ## Abstract:
 The Italian Presidents Webpage is a single-page project developed using the Laravel framework. This project aims to provide a user-friendly interface that displays a comprehensive list of the Italian Presidents along with their brief information, images, and links to their respective Wikipedia pages. 
